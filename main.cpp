@@ -100,6 +100,26 @@ int main()
 		PlayerPosition.X = PlayerPosition.X >= 9 ? 8 : PlayerPosition.X;
 		PlayerPosition.Y = PlayerPosition.Y >= 9 ? 8 : PlayerPosition.Y;
 
+		if (Map[PlayerPosition.Y][PlayerPosition.X] == '#')
+		{
+			if (KeyCode == 'w' || KeyCode == 'W')
+			{
+				PlayerPosition.Y++;
+			}
+			else if (KeyCode == 's' || KeyCode == 'S')
+			{
+				PlayerPosition.Y--;
+			}
+			else if (KeyCode == 'a' || KeyCode == 'A')
+			{
+				PlayerPosition.X++;
+			}
+			else if (KeyCode == 'd' || KeyCode == 'D')
+			{
+				PlayerPosition.X--;
+			}
+		}
+
 		system("cls");
 
 		DrawBG(StartPosition);
