@@ -39,6 +39,19 @@ char Map[10][10] = {
 
 void SetLocation(FVector2D NewLocation);
 
+//bool IsCollide(FVector2D& NewPlayerPosition, FVector2D& OutPlayerPosition)
+//{
+//	if (Map[NewPlayerPosition.Y][NewPlayerPosition.X] == '#')
+//	{
+//		return false;
+//	}
+//	else
+//	{
+//		OutPlayerPosition = NewPlayerPosition;
+//		return true;
+//	}
+//}
+
 void DrawBG(FVector2D StartPosition)
 {
 	for (int Y = 0; Y < 10; ++Y)
@@ -59,8 +72,8 @@ int main()
 {
 	bool bRunning = true;
 	FVector2D PlayerPosition;
-	PlayerPosition.X = 0;
-	PlayerPosition.Y = 0;
+	PlayerPosition.X = 1;
+	PlayerPosition.Y = 1;
 
 	srand(static_cast<unsigned int>(time(nullptr)));
 	FVector2D StartPosition;
@@ -70,6 +83,8 @@ int main()
 	while (bRunning)
 	{
 		int KeyCode = _getch();
+
+		//FVector2D NewPlayerPosition = PlayerPosition;
 
 		switch (KeyCode)
 		{
